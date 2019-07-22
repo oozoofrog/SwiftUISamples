@@ -8,16 +8,23 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SampleList: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                NavigationLink(destination: SampleOfText()) {
+                    Text("Text")
+                }
+            }
+            .navigationBarTitle("Samples")
+        }
     }
 }
 
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SampleList()
     }
 }
 #endif
